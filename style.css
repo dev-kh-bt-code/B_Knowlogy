@@ -1,0 +1,201 @@
+:root{
+    --title-text-color: #cdad7d;/*green*/
+    --secondary-text-color: #eeead6 ;/*white*/
+    --third-text-color: #a3a394;/*light gray*/
+    --background-color: #111111;/*black*/
+    --herosection-color: #101a33a2;/*dark gray*/
+    --navbar-color: #131e3de8;/*black*/
+    --border-color: #1b1b1b;/*light black*/
+    --box-color:#1b1b1b;/*black*/
+    --box-color-hover: #272727;/*dark gray*/
+    --button-color: #FFCB74;/*green*/
+    --font-family: "Inter", sans-serif;
+}
+@keyframes scroll{
+    0% {
+        top: 50%;
+        right: 100%;
+
+        width: 10%;
+    }
+    100% {
+        top: 50%;
+        right: -100%;
+        width: 100%;
+    }
+
+}
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    color: var(--third-text-color);
+    background-color: var(--background-color);
+}
+.navbar {
+    top:0;
+    z-index: 1000;
+    left: 0;
+    position: fixed;
+    height: 7vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0;
+    background-color: var(--navbar-color);
+    filter: blur(-5px);
+}
+.sidebar {
+    position: fixed;
+    top: 10vh;
+    right: 5vw;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+
+}
+
+summary{
+    font-size: 5vh;
+    justify-content: end;
+    list-style: none;
+    cursor: pointer;
+    
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+.logo img{
+    padding: 5px;
+    height: 5vh;
+}
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.navbar ul li a {
+    color: var(--third-text-color);
+    text-decoration: none;
+}
+.scroll{
+    position: fixed;
+    right: 0;
+    z-index: 1000;
+    bottom: 50%;
+    rotate: 90deg;
+}
+.scroll::after{
+    display: inline-block;
+    content:" ";
+    position:absolute;
+    height: 2px;
+    background-color: rgba(124, 178, 240, 0.541);
+    animation: scroll 2s linear infinite alternate;
+    display: block;
+}
+.hero {
+
+    position: relative;
+    margin-top: 7vh;
+    height: 93vh;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background:linear-gradient(var(--herosection-color), var(--herosection-color)), url('resource/image/Background/B_herosection.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.hero-content h1 {
+    color: var(--title-text-color);
+    font-family: Bebas Neue, sans-serif;
+    font-size:clamp(2rem, 10vw, 5rem);
+    margin: 0px 0 0 5vw;
+}
+.hero-content h2 {
+    display: inline-block;
+    font-size: clamp(1rem, 4vw, 2rem);
+    margin: 20px 20px 20px 5vw;
+    
+}   
+.hero-content p {
+    display: inline-block;
+    width: 50vw;
+    font-size: clamp(0.5rem, 2vw, 1rem);
+    margin: 10px 0 0 5vw;
+}
+.floatitem{
+    z-index: 0;
+    position: sticky;
+    display: flexbox;
+    animation: float 3s ease-in-out infinite;   
+}
+
+
+
+#atom {
+    position: absolute;
+    font-size: clamp(0.5rem, 10vw, 100px);
+    color: #cdad7d81;
+}
+
+#vial {
+    position: absolute;
+    font-size: clamp(0.5rem, 10vw, 100px);
+    color: #f3826081;
+}
+#earth {
+    position: absolute;
+    font-size: clamp(0.5rem, 10vw, 100px);
+    color: #aba3ce8a;
+}
+#dna {
+    position: absolute;
+    font-size: clamp(0.5rem, 10vw, 100px);
+    color: var(--third-text-color);
+}
+.btn{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--button-color);
+    color: var(--background-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: clamp(0.5rem, 2vw, 1rem);
+    margin: 20px 0 0 5vw;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #e0a86b; /* Lighter shade for hover effect */
+}
+#knowledge-sections {
+
+    position: relative;
+    background-color: var(--background-color);
+}
+#knowledge-sections h1 {
+    display: inline-block;
+    left: 10vw;
+    position: relative;
+    margin-top: 35px;
+    color: var(--title-text-color);
+    font-size: clamp(1rem, 4vw, 3rem);
+    text-align: center;
+    border-bottom: var(--button-color) 3px solid;
+    padding-bottom: 10px;
+}
