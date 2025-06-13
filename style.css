@@ -1,5 +1,6 @@
 :root{
     --title-text-color: #cdad7d;/*green*/
+    --title-text-color-2: #606af1;/*green*/
     --secondary-text-color: #eeead6 ;/*white*/
     --third-text-color: #a3a394;/*light gray*/
     --background-color: linear-gradient(#000000e0, #000000e3), url('resource/image/Thuyettuongdoi/B_thuyettuongdoi.svg');/*black*/
@@ -211,15 +212,14 @@ summary::-webkit-details-marker {
     background-color: var(--background-color);
 }
 #knowledge-sections h1 {
+    background: linear-gradient(90deg, #ff6ec4, #7873f5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     display: inline-block;
-    left: 10vw;
     position: relative;
     margin-top: 35px;
-    color: var(--title-text-color);
-    font-size: clamp(1rem, 4vw, 3rem);
-    text-align: center;
-    border-bottom: var(--button-color) 3px solid;
-    padding-bottom: 10px;
+    font-size: clamp(1rem, 3vw, 3rem);
+    padding-bottom: 5px;
 }
 .theme1{
     z-index: 2;
@@ -238,19 +238,15 @@ summary::-webkit-details-marker {
     
 }
 .gr1-text{
+    padding-left: 5vw;
     height: 90vh;
-    overflow-y: scroll;
+    justify-items: end;
     display: inline-block;
     position: relative;
     box-sizing: border-box;
-    width: 50vw;
-    background-color: var(--gr1-color);
+    width: 45vw;
     border-radius: 0px 20px 20px 0px;
-    padding-left: 5px;
-    scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
 }
-
 .gr1-img{
     animation: float 3s ease-in-out infinite;   
     position: absolute;
@@ -268,34 +264,35 @@ summary::-webkit-details-marker {
     border-radius: 0px 20px 00px 20px;
 }
 .gr2{
-    top:95vh;
     position: absolute;
     gap: 20px;
     height: 100vh;
+    
 }
 .gr2-text{
-    height: 80vh;
-    overflow-y: scroll;
+    padding-left: 5vw;
+    height: 90vh;
+    justify-items: end;
     display: inline-block;
     position: absolute;
-    left: 45vw;
+    top: 40vw;
+    left: 50vw;
     box-sizing: border-box;
-    width: 54.7vw;
-    background-color: var(--gr2-color);
-    border-radius: 20px 0px 0px 20px;
-    padding-left: 5px;
-    scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
+    width: 45vw;
+    border-radius: 0px 20px 20px 0px;
 }
+
+
 .gr2-img{
     animation: float 3s ease-in-out infinite;   
     animation-delay: 1s;
     position: absolute;
-    top:-35%;
-    left: 65vw;
+    top:50%;
+    left: 60vw;
     width: 30vw;
     height: 16.875vw;    
 }
+
 .gr2-img img{
     position: absolute;
     width: 30vw;
@@ -303,9 +300,6 @@ summary::-webkit-details-marker {
     box-shadow: #15271646 0px 0px 20px;
     border-radius: 0px 20px 00px 20px;
 }
-   
-
-
 
 .conner{
     position: absolute;
@@ -314,4 +308,21 @@ summary::-webkit-details-marker {
     height: 50px;
     width: 50px;
     animation: conner 3s ease-in-out infinite alternate;
+}
+.gr3{
+    position: absolute;
+    top:40vw;
+    left: 5vw;
+}
+.gr3 h1{
+    position: absolute;
+    font-size: clamp(1rem, 5vw, 7rem) !important;
+    column-width: 5vw;
+    left: 20vw;
+    top: 0;
+}
+.gr3 img{
+    position: absolute;
+    top: 0;
+    width: 20vw;
 }

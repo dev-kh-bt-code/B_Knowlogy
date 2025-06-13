@@ -1,0 +1,626 @@
+<html>
+    <head>
+        <title>B_Knowlogy</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<style>:root{
+    --title-text-color: #cdad7d;
+    --title-text-color-2: #606af1;
+    --secondary-text-color: #eeead6;
+    --third-text-color: #a3a394;
+    --background-color: linear-gradient(#000000e0, #000000e3), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="30" fill="none" stroke="%23cdad7d" stroke-width="0.5" opacity="0.3"/></svg>');
+    --herosection-color: #101a33a2;
+    --navbar-color: #131e3de8;
+    --border-color: #1b1b1b;
+    --box-color:#1b1b1b;
+    --gr1-color: #02333783;
+    --gr2-color: #02333769;
+    --box-color-hover: #272727;
+    --button-color: #FFCB74;
+    --font-family: "Inter", sans-serif;
+}
+
+@keyframes scroll{
+    0% {
+        top: 50%;
+        right: 100%;
+        width: 10%;
+    }
+    100% {
+        top: 50%;
+        right: -100%;
+        width: 100%;
+    }
+}
+
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes conner {
+  0%   {
+    height: 50px;
+    width: 50px;
+   }
+  50%  { 
+    height: 30px;
+    width: 70px;
+   }
+  100% { 
+    height: 50px;
+    width: 50px;
+   }
+}
+
+body {
+    z-index: -1000;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    color: var(--third-text-color);
+    background: var(--background-color);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.navbar {
+    top:0;
+    z-index: 1000;
+    left: 0;
+    position: fixed;
+    height: 7vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0;
+    background-color: var(--navbar-color);
+    filter: blur(-5px);
+}
+
+.sidebar {
+    position: fixed;
+    top: 10vh;
+    right: 5vw;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+}
+
+summary{
+    font-size: 5vh;
+    justify-content: end;
+    list-style: none;
+    cursor: pointer;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+.logo img{
+    padding: 5px;
+    height: 5vh;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0 20px;
+}
+
+.navbar ul li a {
+    color: var(--third-text-color);
+    text-decoration: none;
+}
+
+.scroll{
+    position: fixed;
+    right: 0;
+    z-index: 1000;
+    bottom: 50%;
+    rotate: 90deg;
+}
+
+.scroll::after{
+    display: inline-block;
+    content:" ";
+    position:absolute;
+    height: 2px;
+    background-color: rgba(124, 178, 240, 0.541);
+    animation: scroll 2s linear infinite alternate;
+    display: block;
+}
+
+.hero {
+    position: relative;
+    margin-top: 7vh;
+    height: 93vh;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background:linear-gradient(var(--herosection-color), var(--herosection-color)), radial-gradient(circle, rgba(205,173,125,0.1) 0%, transparent 70%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.hero-content h1 {
+    color: var(--title-text-color);
+    font-family: Bebas Neue, sans-serif;
+    font-size:clamp(2rem, 10vw, 5rem);
+    margin: 0px 0 0 5vw;
+}
+
+.hero-content h2 {
+    display: inline-block;
+    font-size: clamp(1rem, 4vw, 2rem);
+    margin: 20px 20px 20px 5vw;
+}   
+
+.hero-content p {
+    display: inline-block;
+    width: min(90vw, 50vw);
+    font-size: clamp(0.5rem, 2vw, 1rem);
+    margin: 10px 0 0 5vw;
+}
+
+.floatitem{
+    z-index: 0;
+    position: sticky;
+    display: flexbox;
+    animation: float 3s ease-in-out infinite;   
+}
+
+#atom {
+    position: absolute;
+    font-size: clamp(0.5rem, 8vw, 100px);
+    color: #cdad7d81;
+}
+
+#vial {
+    position: absolute;
+    font-size: clamp(0.5rem, 8vw, 100px);
+    color: #f3826081;
+}
+
+#earth {
+    position: absolute;
+    font-size: clamp(0.5rem, 8vw, 100px);
+    color: #aba3ce8a;
+}
+
+#dna {
+    position: absolute;
+    font-size: clamp(0.5rem, 8vw, 100px);
+    color: var(--third-text-color);
+}
+
+.btn{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--button-color);
+    color: var(--background-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: clamp(0.5rem, 2vw, 1rem);
+    margin: 20px 0 0 5vw;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #e0a86b;
+}
+
+#knowledge-sections {
+    position: relative;
+    background-color: var(--background-color);
+}
+
+#knowledge-sections h1 {
+    background: linear-gradient(90deg, #ff6ec4, #7873f5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    position: relative;
+    margin-top: 35px;
+    font-size: clamp(1rem, 3vw, 3rem);
+    padding-bottom: 5px;
+}
+
+.theme1{
+    z-index: 2;
+    background-image: linear-gradient(#00000093, #00000093), radial-gradient(circle, rgba(205,173,125,0.1) 0%, transparent 70%);
+    background-attachment: fixed;
+    background-position: center;
+    padding-top: 7vh;
+    width: 100vw;
+    height: fit-content;
+    min-height: 200vh;
+}
+
+.gr1{
+    position: relative;
+    gap: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 0;
+}
+
+.gr1-text{
+    padding-left: 5vw;
+    padding-right: 2vw;
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+    width: min(90vw, 45vw);
+    border-radius: 0px 20px 20px 0px;
+    margin-bottom: 2rem;
+}
+
+.gr1-img{
+    animation: float 3s ease-in-out infinite;   
+    position: relative;
+    width: min(90vw, 30vw);
+    height: auto;
+    margin-left: auto;
+    margin-right: 5vw;
+}
+
+.gr1-img img{
+    position: relative;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    box-shadow: #15271646 0px 0px 20px;
+    border-radius: 0px 20px 00px 20px;
+}
+
+.gr1-text h1 {
+    font-size: clamp(1.5rem, 5vw, 3rem) !important;
+    margin-bottom: 1rem;
+}
+
+.gr1-text p {
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.gr2{
+    position: relative;
+    gap: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    padding: 2rem 0;
+}
+
+.gr2-text{
+    padding-right: 5vw;
+    padding-left: 2vw;
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+    width: min(90vw, 45vw);
+    border-radius: 20px 0px 0px 20px;
+    margin-bottom: 2rem;
+    text-align: right;
+}
+
+.gr2-img{
+    animation: float 3s ease-in-out infinite;   
+    animation-delay: 1s;
+    position: relative;
+    width: min(90vw, 30vw);
+    height: auto;
+    margin-left: 5vw;
+    margin-right: auto;
+}
+
+.gr2-img img{
+    position: relative;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    box-shadow: #15271646 0px 0px 20px;
+    border-radius: 20px 0px 20px 0px;
+}
+
+.gr2-text h1 {
+    font-size: clamp(1.5rem, 5vw, 3rem) !important;
+    margin-bottom: 1rem;
+}
+
+.gr2-text p {
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.conner{
+    position: absolute;
+    border-top: #a3a394 3px solid;
+    border-left: #a3a394 3px solid;
+    height: 50px;
+    width: 50px;
+    animation: conner 3s ease-in-out infinite alternate;
+}
+
+.gr3{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 5vw;
+    gap: 2rem;
+}
+
+.gr3 h1{
+    font-size: clamp(2rem, 8vw, 5rem) !important;
+    margin: 0;
+    text-align: center;
+}
+
+.gr3 img{
+    width: min(40vw, 200px);
+    height: auto;
+    border-radius: 50%;
+    box-shadow: #15271646 0px 0px 30px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .navbar ul {
+        gap: 10px;
+        padding: 0 10px;
+    }
+    
+    .navbar ul li a {
+        font-size: 0.9rem;
+    }
+    
+    .sidebar {
+        right: 2vw;
+        top: 8vh;
+    }
+    
+    .hero-content h1 {
+        margin-left: 2vw;
+    }
+    
+    .hero-content h2 {
+        margin-left: 2vw;
+    }
+    
+    .hero-content p {
+        width: 90vw;
+        margin-left: 2vw;
+    }
+    
+    .btn {
+        margin-left: 2vw;
+    }
+    
+    .gr1, .gr2 {
+        padding: 1rem 0;
+    }
+    
+    .gr1-text, .gr2-text {
+        width: 95vw;
+        padding-left: 2.5vw;
+        padding-right: 2.5vw;
+        text-align: left;
+    }
+    
+    .gr1-img, .gr2-img {
+        width: 90vw;
+        margin: 0 5vw;
+    }
+    
+    .gr3 {
+        flex-direction: column;
+        padding: 3rem 2vw;
+        text-align: center;
+    }
+    
+    .gr3 img {
+        width: 60vw;
+        max-width: 250px;
+    }
+    
+    .floatitem {
+        display: none;
+    }
+    
+    .scroll {
+        display: none;
+    }
+    
+    .conner {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        height: 8vh;
+    }
+    
+    .hero {
+        margin-top: 8vh;
+        height: 92vh;
+    }
+    
+    .navbar ul {
+        display: none;
+    }
+    
+    .hero-content h1 {
+        font-size: clamp(1.5rem, 12vw, 3rem);
+    }
+    
+    .theme1 {
+        padding-top: 2vh;
+    }
+    
+    .gr1-text h1, .gr2-text h1 {
+        font-size: clamp(1.2rem, 6vw, 2rem) !important;
+    }
+    
+    .gr3 h1 {
+        font-size: clamp(1.5rem, 10vw, 3rem) !important;
+    }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .gr1 {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .gr2 {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .gr1-text, .gr2-text {
+        width: 50vw;
+    }
+    
+    .gr1-img, .gr2-img {
+        width: 40vw;
+    }
+    
+    .gr3 {
+        flex-direction: row;
+    }
+}
+</style>
+        <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAA2klEQVRYhe2WQQ6CMBRF30tddgFdhIlxqStw5w7cgStw5Q5cgUswMTFdgQuwC1t+JSUJ7Q8tOHFmJm/e/P/fL38AYD8/7w8A" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAA2klEQVRYhe2WQQ6CMBRF30tddgFdhIlxqStw5w7cgStw5Q5cgUswMTFdgQuwC1t+JSUJ7Q8tOHFmJm/e/P/fL38AYD8/7w8A" alt="Logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <aside class="sidebar">
+            <details>
+                <summary>
+                    <i class="fa-solid fa-chart-bar"></i>
+                </summary>
+                <ul class="sidebar-links" style="list-style: none; padding: 10px; background: var(--navbar-color); border-radius: 10px; margin-top: 10px;">
+                    <li style="margin: 5px 0;"><a href="#" style="color: var(--third-text-color); text-decoration: none;">Dashboard</a></li>
+                    <li style="margin: 5px 0;"><a href="#" style="color: var(--third-text-color); text-decoration: none;">Analytics</a></li>
+                    <li style="margin: 5px 0;"><a href="#" style="color: var(--third-text-color); text-decoration: none;">Reports</a></li>
+                    <li style="margin: 5px 0;"><a href="#" style="color: var(--third-text-color); text-decoration: none;">Settings</a></li>
+                </ul>
+            </details>
+        </aside>
+        <div class="scroll">
+            scroll           
+        </div>
+        <header class="hero">
+             <div class="floatitem" id="atom" style="top: 2vh; left: 2vw; rotate: 180deg;">
+                <i class="fa-solid fa-atom"></i>
+            </div>
+             <div class="floatitem" id="vial" style="top: 15vh; right: 2vw;">
+                <i class="fa-solid fa-vial"></i>
+            </div>
+            <div class="floatitem" id="earth" style="top: 20vh; right: 35vw;">
+                <i class="fa-solid fa-earth-americas"></i>
+            </div>
+            <div class="floatitem" id="dna" style="top: 75vh; right: 10vw; rotate: 180deg">
+                <i class="fa-solid fa-dna"></i>
+            </div>
+
+            <div class="hero-content">
+                <h1 style="color: var(--title-text-color);">B_Knowlogy</h1>
+                <h2 style="color: var(--secondary-text-color);"> Just scroll — let the knowledge seep into your brain</h2>
+                <p style="color: var(--third-text-color);">B_Knowlogy là nơi kiến thức không còn khô khan.
+Chỉ cần lướt, những định luật, định lý, và học thuyết vĩ đại nhất sẽ len lỏi vào não bạn một cách tự nhiên.
+Không cần học gò bó, không cần ép buộc, chỉ cần tò mò.
+Chào mừng đến với không gian nơi tri thức tự phát sáng.</p>
+                <a href="#" class="btn">GO</a>
+            </div>
+        </header>
+        <main>
+            <section id="knowledge-sections">
+                <div class="theme1" id="thuyettuongdoi">
+                    
+                    <div class="gr1">
+                        <div class="gr1-text">
+                        <h1>
+                            Thuyết tương đối hẹp
+                        </h1>
+                        <p>
+                            Thuyết tương đối hẹp khẳng định rằng các đại lượng không gian và thời gian không tuyệt đối mà phụ thuộc vào hệ quy chiếu. Khi một vật chuyển động với vận tốc gần ánh sáng so với một hệ quy chiếu quán tính, các hiện tượng như giãn thời gian (time dilation) và co độ dài (length contraction) xảy ra rõ rệt: đồng hồ trong hệ chuyển động chạy chậm hơn, và chiều dài theo phương chuyển động ngắn lại. Đồng thời, khối lượng quán tính tăng theo vận tốc, khiến vật không thể đạt đến vận tốc ánh sáng vì cần năng lượng vô hạn. Ngoài ra, thuyết này thiết lập mối quan hệ giữa khối lượng và năng lượng thông qua phương trình E=mc², cho thấy khối lượng là một dạng năng lượng cô đặc.
+                        </p>
+                        </div>
+                        <div class="gr1-img">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 240'%3E%3Crect width='400' height='240' fill='%23101a33'/%3E%3Ctext x='200' y='120' text-anchor='middle' fill='%23cdad7d' font-size='16' font-family='serif'%3ESpecial Relativity%3C/text%3E%3Ctext x='200' y='140' text-anchor='middle' fill='%23cdad7d' font-size='12' font-family='serif'%3EE = mc²%3C/text%3E%3Ccircle cx='100' cy='180' r='20' fill='none' stroke='%23cdad7d' stroke-width='2'/%3E%3Ccircle cx='300' cy='180' r='20' fill='none' stroke='%23cdad7d' stroke-width='2'/%3E%3Cline x1='120' y1='180' x2='280' y2='180' stroke='%23cdad7d' stroke-width='2'/%3E%3C/svg%3E" alt="thuyettuongdoihep">
+                        <div class="conner" style="rotate: 0deg;top: 0; left: 0;">
+                        </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gr2">
+                        <div class="gr2-text">
+                        <h1>
+                            Thuyết tương đối rộng (1915)
+                        </h1>
+                        <p>
+                            Thuyết tương đối rộng mô tả hấp dẫn không phải là lực mà là hệ quả của độ cong không-thời gian do khối lượng và năng lượng gây ra. Phương trình trường Einstein liên hệ độ cong của không-thời gian (qua tensor Ricci và metric) với phân bố vật chất–năng lượng (tensor năng lượng–động lượng). Chuyển động của vật thể là kết quả của quỹ đạo trắc địa trong không-thời gian cong. Thời gian trôi chậm hơn trong trường hấp dẫn mạnh (hiệu ứng giãn thời gian hấp dẫn), ánh sáng bị bẻ cong khi đi qua vùng không-thời gian cong.
+                        </p>
+                        </div>
+                        <div class="gr2-img">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 240'%3E%3Crect width='400' height='240' fill='%23101a33'/%3E%3Ctext x='200' y='120' text-anchor='middle' fill='%23cdad7d' font-size='16' font-family='serif'%3EGeneral Relativity%3C/text%3E%3Ctext x='200' y='140' text-anchor='middle' fill='%23cdad7d' font-size='12' font-family='serif'%3EGμν = 8πTμν%3C/text%3E%3Cellipse cx='200' cy='180' rx='60' ry='20' fill='none' stroke='%23cdad7d' stroke-width='2'/%3E%3Ccircle cx='200' cy='180' r='5' fill='%23cdad7d'/%3E%3C/svg%3E" alt="thuyettuongdoirong">
+                        <div class="conner" style="rotate: 180deg; bottom: 0%; right: 0%;">
+                        </div>
+                        </div>
+                    </div>
+                
+                    <div class="gr3">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='95' fill='%23cdad7d'/%3E%3Ccircle cx='100' cy='100' r='90' fill='%23101a33'/%3E%3Ctext x='100' y='105' text-anchor='middle' fill='%23cdad7d' font-size='20' font-family='serif'%3EE%3C/text%3E%3C/svg%3E" alt="einstein">
+                        <div class="conner" style="rotate: 0deg;">
+                        </div>
+                        <div class="conner" style="rotate: 180deg; bottom: 0; right: 0;">
+                        </div>
+                        <h1>
+                            Albert Einstein
+                        </h1>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
