@@ -214,6 +214,7 @@ summary::-webkit-details-marker {
 #knowledge-sections h1 {
     background: linear-gradient(90deg, #ff6ec4, #7873f5);
     -webkit-background-clip: text;
+background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
     position: relative;
@@ -221,86 +222,97 @@ summary::-webkit-details-marker {
     font-size: clamp(1rem, 3vw, 3rem);
     padding-bottom: 5px;
 }
+
+
+
 .theme1{
     z-index: 2;
-    background-image: linear-gradient(#00000093, #00000093), url('resource/image/Thuyettuongdoi/B_thuyettuongdoi.svg') !important;
+    background-image: linear-gradient(#0000007e, #000000cc), url('resource/image/Thuyettuongdoi/B_thuyettuongdoi.svg') !important;
     background-attachment: fixed;
     background-position: center;
     padding-top: 7vh;
     width: 100vw;
     height: fit-content;
+    display: grid;
+    grid-template-columns: 0.75fr 2fr;
+    grid-template-rows: 50vh 80vh 80vh 100vh;
+    grid-template-areas: 
+        "gr3 gr3"
+        "gr1 gr1"
+        "gr2 gr2"
+        ". .";
 }
 
 .gr1{
-    position: absolute;
+    grid-area: gr1;
+    position: relative;
     gap: 20px;
-    height: 100vh;
+    display: grid;
+    grid-template-columns: 1.5fr 0.75fr 1fr;
+    grid-template-areas: 
+        " gr1-text gr1-img gr1-img";
     
 }
 .gr1-text{
-    padding-left: 5vw;
-    height: 90vh;
+    padding: 5px;
+    padding-left: 15px;
     justify-items: end;
+    grid-area: gr1-text;
     display: inline-block;
     position: relative;
-    box-sizing: border-box;
-    width: 45vw;
-    border-radius: 0px 20px 20px 0px;
 }
 .gr1-img{
+    top: 10%;
+    grid-area: gr1-img;
     animation: float 3s ease-in-out infinite;   
-    position: absolute;
-    top:5%;
-    left: 50vw;
-    width: 30vw;
-    height: 16.875vw;    
+    position: sticky;
+    align-self: start;
+    
 }
 
 .gr1-img img{
-    position: absolute;
-    width: 30vw;
+    position: sticky;
+    width: 70%;
     object-fit: cover;
     box-shadow: #15271646 0px 0px 20px;
     border-radius: 0px 20px 00px 20px;
 }
 .gr2{
-    position: absolute;
+    grid-area: gr2;
+    position: relative;
     gap: 20px;
-    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.5fr;
+    grid-template-areas: 
+        "gr2-img gr2-text gr2-text";
     
 }
 .gr2-text{
-    padding-left: 5vw;
-    height: 90vh;
-    justify-items: end;
+    
+    padding: 5px;
+    padding-right: 15px;
+    grid-area: gr2-text;
     display: inline-block;
-    position: absolute;
-    top: 40vw;
-    left: 50vw;
-    box-sizing: border-box;
-    width: 45vw;
-    border-radius: 0px 20px 20px 0px;
+    position: relative;
+    justify-items: start;
 }
-
-
 .gr2-img{
+    top:10%;
+    grid-area: gr2-img;
     animation: float 3s ease-in-out infinite;   
-    animation-delay: 1s;
-    position: absolute;
-    top:50%;
-    left: 60vw;
+    position: sticky;
     width: 30vw;
-    height: 16.875vw;    
+    height: 16.875vw; 
+    align-self: start;   
 }
 
 .gr2-img img{
-    position: absolute;
+    position: sticky;
     width: 30vw;
     object-fit: cover;
     box-shadow: #15271646 0px 0px 20px;
     border-radius: 0px 20px 00px 20px;
 }
-
 .conner{
     position: absolute;
     border-top: #a3a394 3px solid;
@@ -310,19 +322,47 @@ summary::-webkit-details-marker {
     animation: conner 3s ease-in-out infinite alternate;
 }
 .gr3{
-    position: absolute;
-    top:40vw;
-    left: 5vw;
+    grid-area: gr3;
+    position: relative;
+    padding-top: 5vh;
+    
 }
 .gr3 h1{
-    position: absolute;
+    position: relative;
     font-size: clamp(1rem, 5vw, 7rem) !important;
-    column-width: 5vw;
-    left: 20vw;
-    top: 0;
+
+
 }
 .gr3 img{
-    position: absolute;
-    top: 0;
+    animation: float 5s ease-in-out infinite alternate;
+    position: sticky;
+    top: 10%;
     width: 20vw;
+    filter: drop-shadow(0 5px 10px #66eb9d57);
 }
+
+.gr1-text p,
+.gr2-text p,
+.gr3 p {
+    font-weight: light;
+    font-size: clamp(0.5rem, 2vw, 1rem);
+    margin: 10px 0;
+    color: var(--third-text-color);
+}
+/*
+.gr1-text::after{
+    content: "Xem thêm";
+    position: absolute;
+    bottom: 0;
+    background:linear-gradient(rgba(65, 59, 146, 0), rgb(56, 37, 100)), linear-gradient(to right, var(--gr1-color), var(--gr2-color));
+    width: 0;
+    height: 0;
+    transition: 2s;
+    filter: blur(5px);
+}
+.gr1-text:hover::after{
+    width: 100%;
+    height: 100%;
+
+}
+*/
