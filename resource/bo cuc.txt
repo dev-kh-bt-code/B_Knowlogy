@@ -1,0 +1,50 @@
+1)Nav: logo, tổng quan, thuyết tương đối hẹp, thuyết tương đối rộng
+2)Herosection:
++Tên web: B_Relativity
++Câu chủ đạo: thuyết tương đối – định nghĩa lại không thời gian
++Mô tả: thuyết tương đối không khó hiểu như bạn nghĩ. Nếu bạn đang bắt đầu tìm kiếm sự thú vị của khoa học thì thuyết tương đối sẽ là một sự khởi đầu tuyệt vời cho bạn
+2) introsection
+Title: tổng quan
+2a) div thuyết tương đối hẹp
++ảnh
++mô tả ngắn gọn: Mô tả: Là nền tảng cho nhiều tiến bộ trong vật lý hiện đại. Tập trung vào các hiện tượng xảy ra khi vận tốc gần bằng tốc độ ánh sáng và không có tác động của trọng lực.
+2b)div thuyết tương đối rộng
++ảnh
++mô tả ngắn gọn: Mô tả: Mở rộng nguyên lý của thuyết hẹp, mô tả trọng lực như sự cong của không-thời gian do vật chất và năng lượng gây ra.
+2c) nút thuyết tươngđối hẹp
+2d) nút thuyết tương đối rộng
+///có thể js khúc này kiểu cho 2a nằm đè lên 2b cái sau mỗi 5s 2a sẽ ẩn 2b sẽ hiện rồi 5s 2b ẩn 2a hiện hoặc khi hover vào 2c thì 2a hiện 2b ẩn, khi hover vào 2d thì 2b hiện 2a ẩn
+
+3) special-relativity
+Title: thuyết tương đối hẹp
+3a) title: nguyên văn
+Trích nguyên văn thuyết tương đối: •  Tiên đề 1: Các định luật vật lý giống nhau trong mọi hệ quy chiếu quán tính.
+•  Tiên đề 2: Tốc độ ánh sáng trong chân không luôn là c với mọi người quan sát, không phụ thuộc vào trạng thái chuyển động của nguồn sáng hay thiết bị đo.
+
+3b)title: ánh sáng có tốc độ không đổi
+Tốc độ ánh sáng trong chân không có độ lớn bằng c (=299.792.458 m/s) trong mọi hệ quy chiếu quán tính, không phụ thuộc vào phương truyền và tốc độ của nguồn sáng hay máy thu.
+Tức là cho dù bn có vừa cửa ngựa vừa chiếu đèn thì ánh sáng cũng kh đc buff thêm tí vận tốc từ con ngựa đang chạy của bn, nó vẫn là 299.792.458 m/s
+3c) title: phương trình vĩ đại
+E=m.c2
+Trong đó e là năng lượng, m là khối lượng nghỉ của vật, c là vận tốc ánh sáng
+Khối lượng và năng lượng là hai biểu hiện khác nhau của cùng một thứ, có thể chuyển hóa qua lại.
+3d)title Ánh sáng là max ping của vận tốc
+Một đứa nhóc tiểu học cũng có thể nói với bạn rằng không vật nào có khối lượng có thể duy chuyển nhanh hơn ánh sáng vì nó cần 1 nguồn năng lượng vô hạng để làm vc đó. Mà khoan nếu theo e=mc2 thì m không đổi c không đổi sao e lại là vô hạn. Vâng, công thức đó kh chỉ dừng lại ở đó mà đúng hơn nó là
+E=γmc2   khi vận tốc tiến gần vận tốc ánh sáng thì γ sẽ tiến đến vô hạn dẫn đến năng lượng của vật là vô hạn.
+•	γ = 1 / √(1 - v²/c²) → khi v gần bằng c thì mẫu số tiến tới 0 → γ → ∞
+
+3e) title: thời gian co giãn
+giản thời gian vận tốc:   Khi một vật chuyển động gần tốc độ ánh sáng, người đứng yên sẽ thấy thời gian của nó trôi chậm hơn.
+Tức là nếu bạn mang 1 cái đồng hồ và chuyển động thì đồng hồ của bạn sẽ trôi chậm hơn đồng hồ đang đứng yên
+4) general-relativity
+Trích nguyên văn: The general theory of relativity states that the laws of physics are the same for all observers, regardless of their motion, and that gravity is not a force, but a consequence of the curvature of spacetime caused by the uneven distribution of mass
+Lý thuyết tương đối tổng quát phát biểu rằng các định luật vật lý là như nhau đối với mọi người quan sát, bất kể chuyển động của họ như thế nào, và trọng lực không phải là một lực mà là hệ quả của độ cong của không thời gian gây ra bởi sự phân bố khối lượng không đồng đều.
+4a) cái nhìn mới về trọng lực
+Không còn là lục hút như newton nói mà Khối lượng – năng lượng làm cong không-thời gian → vật chuyển động theo đường cong đó.
+ảnh video minh hoạ
+4b) thời gian lại 1 lần nữa giản nở
+  Khối lượng lớn → làm méo không gian và làm chậm thời gian xung quanh.
+  Gần lỗ đen → thời gian gần như dừng lại với người ngoài quan sát.
+Người ở gần vật nặng (vd: gần mặt đất, gần lỗ đen) sẽ thấy đồng hồ của người ở xa chạy nhanh hơn.
+
+ 

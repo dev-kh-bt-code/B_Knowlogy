@@ -1,6 +1,6 @@
 :root{
     --title-text-color: #cdad7d;/*green*/
-    --title-text-color-2: #606af1;/*green*/
+    --title-text-color-2: #b5b9f0;/*green*/
     --secondary-text-color: #eeead6 ;/*white*/
     --third-text-color: #a3a394;/*light gray*/
     --background-color: linear-gradient(#000000e0, #000000e3), url('resource/image/Thuyettuongdoi/B_thuyettuongdoi.svg');/*black*/
@@ -9,7 +9,7 @@
     --border-color: #1b1b1b;/*light black*/
     --box-color:#1b1b1b;/*black*/
     --gr1-color: #02333783;
---gr2-color: #02333769;    /*dark green*/
+    --gr2-color: #02333769;    /*dark green*/
     --box-color-hover: #272727;/*dark gray*/
     --button-color: #FFCB74;/*green*/
     --font-family: "Inter", sans-serif;
@@ -49,7 +49,11 @@
    }
 
 }
-
+html{
+    scroll-behavior: smooth;
+    height: 100%;
+    width: 100%;
+}
 body {
     z-index: -1000;
     margin: 0;
@@ -67,34 +71,17 @@ body {
     left: 0;
     position: fixed;
     height: 7vh;
-    width: 100vw;
+    width: 99vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding:0;
+    padding-right: 5px;
     background-color: var(--navbar-color);
     filter: blur(-5px);
 }
-.sidebar {
-    position: fixed;
-    top: 10vh;
-    right: 5vw;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    justify-content: center;
 
-}
 
-summary{
-    font-size: 5vh;
-    justify-content: end;
-    list-style: none;
-    cursor: pointer;
-    
-}
-summary::-webkit-details-marker {
-  display: none;
-}
 .logo img{
     padding: 5px;
     height: 5vh;
@@ -206,113 +193,7 @@ summary::-webkit-details-marker {
 .btn:hover {
     background-color: #e0a86b; /* Lighter shade for hover effect */
 }
-#knowledge-sections {
 
-    position: relative;
-    background-color: var(--background-color);
-}
-#knowledge-sections h1 {
-    background: linear-gradient(90deg, #ff6ec4, #7873f5);
-    -webkit-background-clip: text;
-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
-    position: relative;
-    margin-top: 35px;
-    font-size: clamp(1rem, 3vw, 3rem);
-    padding-bottom: 5px;
-}
-
-
-
-.theme1{
-    z-index: 2;
-    background-image: linear-gradient(#0000007e, #000000cc), url('resource/image/Thuyettuongdoi/B_thuyettuongdoi.svg') !important;
-    background-attachment: fixed;
-    background-position: center;
-    padding-top: 7vh;
-    width: 100vw;
-    height: fit-content;
-    display: grid;
-    grid-template-columns: 0.75fr 2fr;
-    grid-template-rows: 50vh 80vh 80vh 100vh;
-    grid-template-areas: 
-        "gr3 gr3"
-        "gr1 gr1"
-        "gr2 gr2"
-        ". .";
-}
-
-.gr1{
-    grid-area: gr1;
-    position: relative;
-    gap: 20px;
-    display: grid;
-    grid-template-columns: 1.5fr 0.75fr 1fr;
-    grid-template-areas: 
-        " gr1-text gr1-img gr1-img";
-    
-}
-.gr1-text{
-    padding: 5px;
-    padding-left: 15px;
-    justify-items: end;
-    grid-area: gr1-text;
-    display: inline-block;
-    position: relative;
-}
-.gr1-img{
-    top: 10%;
-    grid-area: gr1-img;
-    animation: float 3s ease-in-out infinite;   
-    position: sticky;
-    align-self: start;
-    
-}
-
-.gr1-img img{
-    position: sticky;
-    width: 70%;
-    object-fit: cover;
-    box-shadow: #15271646 0px 0px 20px;
-    border-radius: 0px 20px 00px 20px;
-}
-.gr2{
-    grid-area: gr2;
-    position: relative;
-    gap: 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 0.5fr;
-    grid-template-areas: 
-        "gr2-img gr2-text gr2-text";
-    
-}
-.gr2-text{
-    
-    padding: 5px;
-    padding-right: 15px;
-    grid-area: gr2-text;
-    display: inline-block;
-    position: relative;
-    justify-items: start;
-}
-.gr2-img{
-    top:10%;
-    grid-area: gr2-img;
-    animation: float 3s ease-in-out infinite;   
-    position: sticky;
-    width: 30vw;
-    height: 16.875vw; 
-    align-self: start;   
-}
-
-.gr2-img img{
-    position: sticky;
-    width: 30vw;
-    object-fit: cover;
-    box-shadow: #15271646 0px 0px 20px;
-    border-radius: 0px 20px 00px 20px;
-}
 .conner{
     position: absolute;
     border-top: #a3a394 3px solid;
@@ -321,48 +202,9 @@ background-clip: text;
     width: 50px;
     animation: conner 3s ease-in-out infinite alternate;
 }
-.gr3{
-    grid-area: gr3;
-    position: relative;
-    padding-top: 5vh;
-    
+#intro-section h1{
+    color: var(--title-text-color);
+    font-family: Noto Sans, sans-serif;
+    font-size: clamp(1rem, 10vw, 3rem);
+    margin: 0px 0 0 5vw;
 }
-.gr3 h1{
-    position: relative;
-    font-size: clamp(1rem, 5vw, 7rem) !important;
-
-
-}
-.gr3 img{
-    animation: float 5s ease-in-out infinite alternate;
-    position: sticky;
-    top: 10%;
-    width: 20vw;
-    filter: drop-shadow(0 5px 10px #66eb9d57);
-}
-
-.gr1-text p,
-.gr2-text p,
-.gr3 p {
-    font-weight: light;
-    font-size: clamp(0.5rem, 2vw, 1rem);
-    margin: 10px 0;
-    color: var(--third-text-color);
-}
-/*
-.gr1-text::after{
-    content: "Xem thêm";
-    position: absolute;
-    bottom: 0;
-    background:linear-gradient(rgba(65, 59, 146, 0), rgb(56, 37, 100)), linear-gradient(to right, var(--gr1-color), var(--gr2-color));
-    width: 0;
-    height: 0;
-    transition: 2s;
-    filter: blur(5px);
-}
-.gr1-text:hover::after{
-    width: 100%;
-    height: 100%;
-
-}
-*/
