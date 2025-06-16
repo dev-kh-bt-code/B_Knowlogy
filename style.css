@@ -203,8 +203,43 @@ body {
     animation: conner 3s ease-in-out infinite alternate;
 }
 #intro-section h1{
-    color: var(--title-text-color);
+    color: #E87A64;
     font-family: Noto Sans, sans-serif;
-    font-size: clamp(1rem, 10vw, 3rem);
-    margin: 0px 0 0 5vw;
+    font-size: clamp(1rem, 13vw, 5rem);
+    margin: 5vh 0 0 5vw;
 }
+#intro-sr-card{
+    width: 90vw;
+    justify-self: center;
+    display: grid;
+    grid-template-columns: 0.75fr 1fr;
+    grid-template-rows: 0.2fr 1fr;
+    column-gap: 2vw;
+    grid-template-areas: 
+        'intro-sr-title intro-sr-img'
+        'intro-sr-description intro-sr-img';
+}
+#intro-sr-title{
+    display: inline;
+    grid-area: intro-sr-title;
+    color: var(--title-text-color-2);
+    font-family: Inter, sans-serif;
+    font-size: clamp(1rem, 10vw, 3rem);
+    justify-self: end;
+    text-align: end;
+    margin:0;
+}
+#intro-sr-description{
+    grid-area: intro-sr-description;
+    color: var(--third-text-color);
+    font-family: Inter, sans-serif;
+    font-size: clamp(0.5rem, 2vw, 1rem);
+    text-align: left;
+    justify-self: left;
+    text-wrap: balance;
+    max-inline-size: 50ch;
+}
+#intro-sr-img{
+    grid-area: intro-sr-img;
+    width: 40vw;
+    }
