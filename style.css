@@ -202,44 +202,123 @@ body {
     width: 50px;
     animation: conner 3s ease-in-out infinite alternate;
 }
-#intro-section h1{
-    color: #E87A64;
-    font-family: Noto Sans, sans-serif;
-    font-size: clamp(1rem, 13vw, 5rem);
-    margin: 5vh 0 0 5vw;
+#intro-sr-title, #intro-gl-title,#intro-sr-card,#intro-gl-card,
+#intro-sr-description, #intro-gl-description,
+#intro-sr-img, #intro-gl-img {
+    transition: all 0.3s ease;
+}
+#intro-section {
+    padding: 15vh 0 0 3vw;
+    position: relative;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        'intro-sr-card intro-gl-card';    
+}
+#intro-sr-card {
+    grid-area: intro-sr-card;
+}
+#intro-gl-card {
+    grid-area: intro-gl-card;
+}
+#intro-sr-card, #intro-gl-card{
+
+    position: relative;
+    width: 40vw;
 }
 #intro-sr-card{
-    width: 90vw;
-    justify-self: center;
     display: grid;
-    grid-template-columns: 0.75fr 1fr;
-    grid-template-rows: 0.2fr 1fr;
-    column-gap: 2vw;
+    grid-template-rows: auto auto auto;
+    row-gap: 2px;
     grid-template-areas: 
-        'intro-sr-title intro-sr-img'
-        'intro-sr-description intro-sr-img';
+        'intro-sr-img'
+        'intro-sr-title'
+        'intro-sr-description';
 }
-#intro-sr-title{
-    display: inline;
-    grid-area: intro-sr-title;
-    color: var(--title-text-color-2);
-    font-family: Inter, sans-serif;
-    font-size: clamp(1rem, 10vw, 3rem);
-    justify-self: end;
-    text-align: end;
-    margin:0;
-}
-#intro-sr-description{
-    grid-area: intro-sr-description;
-    color: var(--third-text-color);
-    font-family: Inter, sans-serif;
-    font-size: clamp(0.5rem, 2vw, 1rem);
-    text-align: left;
-    justify-self: left;
-    text-wrap: balance;
-    max-inline-size: 50ch;
+#intro-gl-card{
+    display: grid;
+    row-gap: 0px;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+        'intro-gl-img'
+        'intro-gl-title'
+        'intro-gl-description';
 }
 #intro-sr-img{
     grid-area: intro-sr-img;
-    width: 40vw;
-    }
+    background-image: url('resource/image/Thuyettuongdoi/Law_tuongdoihep.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    width: 400px;
+
+}
+#intro-gl-img{
+    grid-area: intro-gl-img;
+    background-image: url('resource/image/Thuyettuongdoi/Law_tuongdoirong.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    width: 400px;
+}
+#intro-sr-img,#intro-gl-img{
+    width: 100%;
+}
+#intro-sr-title{
+    grid-area: intro-sr-title;
+}
+#intro-gl-title{
+    grid-area: intro-gl-title;
+}
+#intro-sr-description{
+    grid-area: intro-sr-description;
+}
+#intro-gl-description{
+    grid-area: intro-gl-description;
+}
+
+#intro-sr-title, #intro-gl-title{
+    color: var(--title-text-color-2);
+    height: fit-content;
+    margin: 2vh 0 0 0;
+    padding:0;
+    font-family: Noto Sans, sans-serif;
+    font-size: clamp(1rem, 4vw, 40px);
+    display: block;
+}
+
+
+#intro-sr-description, #intro-gl-description{
+
+    margin: 0;
+    padding: 0;
+    color: var(--third-text-color);
+    font-family: Inter, sans-serif;
+    font-size: clamp(0.5rem, 2vw, 1rem);
+    display: block;
+
+}
+#intro-sr-card:hover #intro-sr-img{
+    width: 110%;
+    height: 280px;
+}
+#intro-sr-card:hover #intro-sr-title{
+    margin: 0;
+}
+#intro-gl-card:hover #intro-gl-img{
+    width: 110%;
+    height: 280px;
+}
+#intro-gl-card:hover #intro-gl-title{
+    margin: 0;
+}
+#intro-sr-card:hover{
+    transform: translate(0,-15px);
+}
+#intro-gl-card:hover{
+    transform: translate(0,-15px);
+}
